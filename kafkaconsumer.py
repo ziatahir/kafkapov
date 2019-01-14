@@ -10,7 +10,7 @@ for message in consumer:
     if counter == nbr_msg:
        break
 
-return counter 
+#return counter 
 print (counter)
 
 consumer.commitAsync()
