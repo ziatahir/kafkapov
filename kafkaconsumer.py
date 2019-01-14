@@ -1,6 +1,6 @@
 from kafka import KafkaConsumer
-KafkaConsumer(auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
-consumer = KafkaConsumer('test', bootstrap_servers=['localhost:9092'])
+#KafkaConsumer(auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
+consumer = KafkaConsumer('test', bootstrap_servers=['localhost:9092'], auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
 
 counter = 0
 for message in consumer:
