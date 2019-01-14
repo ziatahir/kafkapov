@@ -5,12 +5,12 @@ consumer = KafkaConsumer('test', bootstrap_servers=['localhost:9092'])
 #  print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition, message.offset, message.key, message.value))
 
 counter = 0
-    for message in consumer:
-        counter = counter + 1
-        if counter == nbr_msg:
-            break
+for message in consumer:
+    counter = counter + 1
+    if counter == nbr_msg:
+       break
 
-    return counter 
+return counter 
 print (counter)
 
 consumer.commitAsync()
