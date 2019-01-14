@@ -3,7 +3,7 @@ from kafka import KafkaConsumer
 consumer = KafkaConsumer('test', bootstrap_servers=['localhost:9092'], auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
 
 counter = 0
-def nbr_msg=20:
+nbr_msg = 20
 for message in consumer:
     counter = counter + 1
 #    if counter == 16:
