@@ -13,5 +13,5 @@ for message in consumer:
 #return counter 
 print (counter)
 
-consumer.commitAsync()
+#consumer.commitAsync()
 consumer.close()
