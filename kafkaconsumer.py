@@ -1,5 +1,5 @@
 from kafka import KafkaConsumer
-KafkaConsumer(auto_offset_reset='latest', enable_auto_commit=False, group_id=None)
+KafkaConsumer(auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
 consumer = KafkaConsumer('test', bootstrap_servers=['localhost:9092'])
 
 counter = 0
