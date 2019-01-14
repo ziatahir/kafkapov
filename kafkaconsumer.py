@@ -7,7 +7,7 @@ consumer = KafkaConsumer('test', bootstrap_servers=['localhost:9092'])
 counter = 0
 for message in consumer:
     counter = counter + 1
-    if counter == nbr_msg:
+    if counter == 2:
        break
 
 #return counter 
