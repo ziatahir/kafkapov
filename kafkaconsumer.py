@@ -2,15 +2,14 @@ from kafka import KafkaConsumer
 #KafkaConsumer(auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
 consumer = KafkaConsumer('topic_charmID', bootstrap_servers=['localhost:9092'], auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
 
-counter = 0
-nbr_msg = 2
-for message in consumer:
-    counter = counter + 1
-#    if counter == 16:
-    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition, message.offset, message.key, message.value))
-    if message.value == 'CharmID-12345':
-        print ("Call SAP to Create Charm")
-    if counter == nbr_msg:
-        break    
-print (counter)
+print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition, message.offset, message.key, message.value))
+if message.value == 'CharmID-12345':
+print ("Call SAP to Create Charm")
+consumer.close()
+
+
+consumer = KafkaConsumer('topic_TrID', bootstrap_servers=['localhost:9092'], auto_offset_reset='earliest', enable_auto_commit=False, group_id=None)
+print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition, message.offset, message.key, message.value))
+if message.value == 'TRID-12345':
+print ("Call SAP to Create Transport")
 consumer.close()
